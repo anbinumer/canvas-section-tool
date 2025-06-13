@@ -4,9 +4,9 @@
       "kty": "RSA",
       "use": "sig",
       "kid": "canvas-section-tool-key",
-      "n": "example-key-will-be-generated-during-deployment",
+      "n": "x_eZ_TVS1CrVH1tJ0VmcYvhiBKxRhgVrt_Cabf3V9X3-uq2d-2Lh6ve_RSsAmnE7kwGmFOfQllvH5joU6zThYQx3JRSE0EBhYhhbGmD-JN9RiTUMT5tKJ_DwtdRZhrb-xc18Njmt8-2Vu3hB_8I90vvil09MZutDCPBNS-sZzeJCq9_GNgxjBED5KQgdwSjzOk9kSss5-SI0feQ1rhZe6TJhQg5uQ_RWns0o5hCi55E8Uc4yuIFJ9vo75VMAku8d77CaebrSK2tNbLa0dCtgJFZV5MauyXn23Jtpqn04mcp5AsJwT11ZUrurHUkft0sQ5p7cQ5wIcSmf8GUfuNxMKQ",
       "e": "AQAB",
       "alg": "RS256"
     }
   ]
-} 
+}
