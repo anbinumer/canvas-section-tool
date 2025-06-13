@@ -11,15 +11,21 @@ interface LTIContext {
 }
 
 export default function LTILaunch() {
+  console.log('LTI Launch page component rendering');
   const [ltiContext, setLtiContext] = useState<LTIContext>({ isAuthenticated: false });
   const [loading, setLoading] = useState(true);
   const searchParams = useSearchParams();
 
   useEffect(() => {
+    console.log('LTI Launch useEffect running');
+    console.log('Search params:', Object.fromEntries(searchParams?.entries() || []));
+    
     // Check for LTI parameters
     const hasLtiParams = searchParams?.has('lti_message_hint') || 
                         searchParams?.has('id_token') || 
                         searchParams?.has('state');
+    
+    console.log('Has LTI params:', hasLtiParams);
     
     // Simulate LTI context for now (in real implementation, this would come from LTI authentication)
     const mockLtiContext = {
@@ -42,6 +48,7 @@ export default function LTILaunch() {
       isAuthenticated: hasLtiParams
     };
 
+    console.log('Setting LTI context:', mockLtiContext);
     setLtiContext(mockLtiContext);
     setLoading(false);
   }, [searchParams]);

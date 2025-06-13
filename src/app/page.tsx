@@ -118,6 +118,17 @@ export default function Home() {
           Ready for Canvas LTI integration
         </p>
       </div>
+
+      <div style={{ marginTop: '20px' }}>
+        <h2>Test Links:</h2>
+        <ul>
+          <li>
+            <a href="/lti/launch" style={{ color: 'blue', textDecoration: 'underline' }}>
+              Test LTI Launch Page
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
   );
 } 
