@@ -1,11 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   swcMinify: true,
-  async rewrites() {
+  async redirects() {
     return [
       {
         source: '/lti/launch',
         destination: '/app/lti/launch',
+        permanent: true,
       },
     ]
   },
