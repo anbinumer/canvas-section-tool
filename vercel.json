@@ -1,19 +1,9 @@
 {
   "version": 2,
-  "name": "canvas-section-tool",
-  "builds": [
-    {
-      "src": "package.json",
-      "use": "@vercel/next"
-    }
-  ],
   "routes": [
     {
       "src": "/.well-known/(.*)",
       "dest": "/public/.well-known/$1"
     }
-  ],
-  "env": {
-    "NODE_ENV": "production"
-  }
+  ]
 } 

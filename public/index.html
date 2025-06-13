@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas Section Management Tool - Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .header {
+            background-color: #394B58;
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .status {
+            background-color: #e8f5e8;
+            border: 1px solid #c3e6c3;
+            padding: 15px;
+            border-radius: 8px;
+            color: #2d5a2d;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Canvas Section Management Tool</h1>
+        <p>🚀 Static Test Page - Vercel Deployment Working!</p>
+    </div>
+    
+    <div class="status">
+        <h3>✅ Deployment Status</h3>
+        <p><strong>Status:</strong> Successfully deployed to Vercel</p>
+        <p><strong>Purpose:</strong> Testing Canvas Beta LTI integration</p>
+        <p><strong>Next Step:</strong> Configure Canvas Developer Key</p>
+    </div>
+    
+    <h2>Canvas Beta Configuration URLs:</h2>
+    <ul>
+        <li><strong>Target Link URI:</strong> <span id="base-url"></span>/lti/launch</li>
+        <li><strong>OpenID Connect Initiation:</strong> <span id="base-url-2"></span>/api/auth/lti/login</li>
+        <li><strong>Public JWK URL:</strong> <span id="base-url-3"></span>/.well-known/jwks.json</li>
+    </ul>
+    
+    <script>
+        // Auto-populate URLs based on current domain
+        const baseUrl = window.location.origin;
+        document.getElementById('base-url').textContent = baseUrl;
+        document.getElementById('base-url-2').textContent = baseUrl;
+        document.getElementById('base-url-3').textContent = baseUrl;
+    </script>
+</body>
+</html> 
