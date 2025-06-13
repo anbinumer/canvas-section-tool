@@ -12,15 +12,5 @@
   "buildCommand": "next build",
   "devCommand": "next dev",
   "installCommand": "npm install",
-  "framework": "nextjs",
-  "routes": [
-    {
-      "src": "/.well-known/(.*)",
-      "dest": "/public/.well-known/$1"
-    },
-    {
-      "src": "/lti-launch",
-      "dest": "/lti-launch"
-    }
-  ]
+  "framework": "nextjs"
 } 
