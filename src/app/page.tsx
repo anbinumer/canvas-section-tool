@@ -123,7 +123,7 @@ export default function Home() {
         <h2>Test Links:</h2>
         <ul>
           <li>
-            <a href="/lti-launch" style={{ color: 'blue', textDecoration: 'underline' }}>
+            <a href="/lti/launch" style={{ color: 'blue', textDecoration: 'underline' }}>
               Test LTI Launch Page
             </a>
           </li>
