@@ -1,0 +1,12 @@
+{
+  "keys": [
+    {
+      "kty": "RSA",
+      "use": "sig",
+      "kid": "canvas-section-tool-key",
+      "n": "example-key-will-be-generated-during-deployment",
+      "e": "AQAB",
+      "alg": "RS256"
+    }
+  ]
+} 
