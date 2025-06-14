@@ -19,29 +19,14 @@ export async function POST(request: NextRequest) {
       client_id
     });
 
-    // Generate state and nonce for security
-    const state = generateRandomString(32);
-    const nonce = generateRandomString(32);
+    // Use production credentials if coming from production Canvas
+    const isProduction = iss?.includes('aculeo.instructure.com');
     
-    // Store state and nonce (in production, use proper session storage)
-    // For now, we'll pass them in the redirect
+    // Simple redirect approach - let Canvas handle the navigation
+    const toolUrl = `/simple-test?lti_launch=true&iss=${encodeURIComponent(iss || '')}&client_id=${encodeURIComponent(client_id || '')}&canvas_env=${isProduction ? 'production' : 'beta'}`;
     
-    // Build OIDC authorization URL
-    const authUrl = new URL('/api/lti/authorize', iss);
-    authUrl.searchParams.set('response_type', 'id_token');
-    authUrl.searchParams.set('client_id', client_id || '226430000000000270');
-    authUrl.searchParams.set('redirect_uri', `${process.env.VERCEL_URL || 'https://canvas-section-tool.vercel.app'}/api/auth/lti/callback`);
-    authUrl.searchParams.set('login_hint', login_hint);
-    authUrl.searchParams.set('lti_message_hint', lti_message_hint || '');
-    authUrl.searchParams.set('state', state);
-    authUrl.searchParams.set('response_mode', 'form_post');
-    authUrl.searchParams.set('nonce', nonce);
-    authUrl.searchParams.set('scope', 'openid');
-    
-    console.log('Redirecting to Canvas OIDC:', authUrl.toString());
-    
-    // Redirect to Canvas OIDC authorization endpoint
-    return NextResponse.redirect(authUrl.toString());
+    // Instead of trying to break out, just redirect normally
+    return NextResponse.redirect(new URL(toolUrl, request.url));
     
   } catch (error) {
     console.error('LTI Login Error:', error);
@@ -69,12 +54,13 @@ export async function GET(request: NextRequest) {
     client_id
   });
   
-  // For simplicity in testing, redirect directly to launch with mock data
-  const launchUrl = new URL('/lti/launch', request.url);
-  launchUrl.searchParams.set('lti_message_hint', lti_message_hint || 'test');
-  launchUrl.searchParams.set('state', 'mock_state');
+  // Use production credentials if coming from production Canvas
+  const isProduction = iss?.includes('aculeo.instructure.com');
   
-  return NextResponse.redirect(launchUrl.toString());
+  // Simple redirect for GET requests too
+  const toolUrl = `/simple-test?lti_launch=true&iss=${encodeURIComponent(iss || '')}&client_id=${encodeURIComponent(client_id || '')}&canvas_env=${isProduction ? 'production' : 'beta'}`;
+  
+  return NextResponse.redirect(new URL(toolUrl, request.url));
 }
 
 function generateRandomString(length: number): string {
