@@ -16,7 +16,7 @@ const nextConfig = {
           },
           {
             key: 'Content-Security-Policy',
-            value: "frame-ancestors 'self' https://canvas.beta.instructure.com https://*.instructure.com",
+            value: "frame-ancestors 'self' https://aculeo.beta.instructure.com https://*.instructure.com",
           },
         ],
       },
