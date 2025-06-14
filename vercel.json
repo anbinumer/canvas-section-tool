@@ -6,14 +6,6 @@
       "destination": "/api/jwks"
     }
   ],
-  "headers": [
-    {
-      "source": "/(.*)",
-      "headers": [
-        { "key": "Content-Security-Policy", "value": "frame-ancestors *" }
-      ]
-    }
-  ],
   "buildCommand": "next build",
   "devCommand": "next dev",
   "installCommand": "npm install",
