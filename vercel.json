@@ -1,5 +1,11 @@
 {
   "version": 2,
+  "rewrites": [
+    {
+      "source": "/.well-known/jwks.json",
+      "destination": "/api/jwks"
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",

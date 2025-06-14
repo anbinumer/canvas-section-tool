@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 
 interface LTIContext {
@@ -10,7 +10,7 @@ interface LTIContext {
   isAuthenticated: boolean;
 }
 
-export default function LTILaunch() {
+function LTILaunchContent() {
   console.log('LTI Launch page component rendering');
   const [ltiContext, setLtiContext] = useState<LTIContext>({ isAuthenticated: false });
   const [loading, setLoading] = useState(true);
@@ -199,7 +199,7 @@ export default function LTILaunch() {
 
       <button style={{ 
         backgroundColor: '#394B58', 
-        color: 'white', 
+        color: 'white',
         padding: '12px 24px', 
         border: 'none',
         borderRadius: '6px',
@@ -237,5 +237,24 @@ export default function LTILaunch() {
         </details>
       </div>
     </div>
+  );
+}
+
+export default function LTILaunch() {
+  return (
+    <Suspense fallback={
+      <div style={{ 
+        padding: '40px', 
+        backgroundColor: '#ffffff', 
+        minHeight: '100vh',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center'
+      }}>
+        <div>Loading Canvas integration...</div>
+      </div>
+    }>
+      <LTILaunchContent />
+    </Suspense>
   );
 } 

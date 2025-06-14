@@ -2,9 +2,6 @@
 const nextConfig = {
   swcMinify: true,
   output: 'standalone',
-  experimental: {
-    appDir: true,
-  },
   async headers() {
     return [
       {
