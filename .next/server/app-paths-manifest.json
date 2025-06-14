@@ -1,12 +1,12 @@
 {
-  "/api/assignments/route": "app/api/assignments/route.js",
-  "/api/auth/lti/login/route": "app/api/auth/lti/login/route.js",
   "/_not-found/page": "app/_not-found/page.js",
-  "/api/jwks/route": "app/api/jwks/route.js",
-  "/page": "app/page.js",
-  "/api/auth/lti/route": "app/api/auth/lti/route.js",
-  "/api/sections/route": "app/api/sections/route.js",
+  "/api/assignments/route": "app/api/assignments/route.js",
   "/api/auth/lti/callback/route": "app/api/auth/lti/callback/route.js",
+  "/api/auth/lti/route": "app/api/auth/lti/route.js",
+  "/api/auth/lti/login/route": "app/api/auth/lti/login/route.js",
+  "/api/jwks/route": "app/api/jwks/route.js",
+  "/api/sections/route": "app/api/sections/route.js",
+  "/page": "app/page.js",
   "/api/students/route": "app/api/students/route.js",
   "/lti/launch/page": "app/lti/launch/page.js"
 }
